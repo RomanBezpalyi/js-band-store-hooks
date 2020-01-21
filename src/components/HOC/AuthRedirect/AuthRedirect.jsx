@@ -7,7 +7,7 @@ import { isAuthentificated } from '../../../redux/session/selectors';
 const AuthRedirect = BaseComponent => {
   const WithAuthRedirect = ({ authentificated, history }) => {
     useEffect(() => {
-      history.replace('/books');
+      if (authentificated) history.replace('/books');
     }, [authentificated, history]);
 
     return <BaseComponent />;

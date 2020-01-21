@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getToken } from '../../redux/session/selectors';
+import { getToken, isAuthentificated } from '../../redux/session/selectors';
 import { refreshUser } from '../../redux/session/operations';
 import ProtectedComponent from '../HOC/ProtectedComponent';
 import SigninPage from '../../pages/SigninPage';
@@ -11,10 +11,10 @@ import BookPage from '../../pages/BookPage';
 import CartPage from '../../pages/CartPage';
 import NotFoundPage from '../../pages/NotFoundPage';
 
-const App = ({ token, handleRefreshUser }) => {
+const App = ({ token, handleRefreshUser, authentificated }) => {
   useEffect(() => {
-    handleRefreshUser();
-  }, [token, handleRefreshUser]);
+    if (token && !authentificated) handleRefreshUser();
+  }, [token, handleRefreshUser, authentificated]);
 
   return (
     <Switch>
@@ -30,6 +30,7 @@ const App = ({ token, handleRefreshUser }) => {
 
 App.propTypes = {
   token: PropTypes.string,
+  authentificated: PropTypes.bool.isRequired,
   handleRefreshUser: PropTypes.func.isRequired,
 };
 
@@ -39,6 +40,7 @@ App.defaultProps = {
 
 const mSTP = state => ({
   token: getToken(state),
+  authentificated: isAuthentificated(state),
 });
 
 const mDTP = {

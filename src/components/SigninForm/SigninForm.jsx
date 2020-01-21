@@ -19,7 +19,7 @@ const SigninForm = ({
   });
 
   useEffect(() => {
-    if (prevError && prevUsernameLength !== username.length) {
+    if (prevError.current && prevUsernameLength !== username.length) {
       clearErrorMsg();
     }
   }, [clearErrorMsg, username]);

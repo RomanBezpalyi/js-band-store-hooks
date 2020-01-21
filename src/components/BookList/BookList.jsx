@@ -3,14 +3,10 @@ import PropTypes from 'prop-types';
 import LoaderSpinner from '../LoaderSpinner';
 import BookListItem from '../BookListItem';
 
-const BookList = ({ getBooks, books, isLoading }) => {
-  // componentDidMount() {
-  //   const { getBooks, books } = this.props;
-  //   if (!books.length) getBooks();
-  // }
+const BookList = ({ getBooks, books, isLoading, authentificated }) => {
   useEffect(() => {
-    if (!books.length) getBooks();
-  }, [getBooks, books.length]);
+    if (!books.length && authentificated) getBooks();
+  }, [getBooks, books.length, authentificated]);
 
   return (
     <>
@@ -40,6 +36,7 @@ BookList.propTypes = {
     }).isRequired,
   ),
   isLoading: PropTypes.bool.isRequired,
+  authentificated: PropTypes.bool.isRequired,
 };
 
 BookList.defaultProps = {
