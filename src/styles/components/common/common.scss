@@ -1,0 +1,47 @@
+.main-content {
+  min-height: calc(100vh - 96px);
+  padding-top: 40px;
+  background-color: #f5f7fa;
+}
+
+.loader-books,
+.loader-book {
+  padding-top: 40px;
+  display: block;
+  width: 20%;
+  margin: 0 auto;
+}
+
+.loader-book {
+  width: 30%;
+}
+
+.not-found-text,
+.not-found-text--main {
+  color: #555;
+  font-weight: bold;
+}
+
+.not-found-text--main {
+  width: 320px;
+  padding-top: 60px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-size: 60px;
+  text-align: center;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .loader-books {
+    width: 40%;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .not-found-text--main {
+    width: 398px;
+    text-align: left;
+  }
+}

@@ -1,0 +1,14 @@
+.filter-form {
+  display: flex;
+  width: 90%;
+  padding-left: 10%;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .filter-form {
+    width: 40%;
+
+  }
+}

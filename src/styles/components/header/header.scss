@@ -1,0 +1,111 @@
+.header {
+  margin: 0;
+  padding: 16px 0;
+  background-color: #222;
+  color: #fff;
+  box-shadow: 2px 3.464px 8px 0px rgba(29, 29, 27, 0.1);
+}
+
+.header__flexcontainer {
+  width: 84%;
+  margin: 0 auto;
+}
+
+.app-logo a {
+  color: #fff;
+}
+
+.app-logo a:hover,
+.app-logo a:focus {
+  text-decoration: none;
+}
+
+.header-nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav {
+  width: 46%;
+}
+
+.header-nav-list {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-nav-list>li {
+  display: inline;
+}
+
+.header-nav-list>li:first-of-type {
+  position: relative;
+}
+
+.cart-btn {
+  border: 0;
+  background-color: transparent;
+  fill: #fff;
+  transition: 0.3s;
+}
+
+.cart-btn:hover,
+.cart-btn:focus {
+  fill: #ffd700;
+  outline: none;
+}
+
+.cart-count {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+.logout-btn {
+  background-color: #555;
+  color: #fff;
+  border-color: #666;
+  transition: 0.3s;
+}
+
+.logout-btn:hover,
+.logout-btn:focus {
+  color: #ffd700;
+  box-shadow: 0 0 3px 1px #ffd700;
+  border-color: #ffd700;
+}
+
+@media screen and (min-width: 768px) {
+  .header__flexcontainer {
+    width: 84%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-nav-wrapper {
+    width: 60%;
+  }
+
+  .header-nav-list {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header-nav-wrapper {
+    width: 30%;
+  }
+}
