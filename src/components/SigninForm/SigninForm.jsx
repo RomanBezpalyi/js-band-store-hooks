@@ -10,19 +10,14 @@ const SigninForm = ({
   signInError,
 }) => {
   const [username, setUsername] = useState('');
-  const prevUsernameLength = useRef();
   const prevError = useRef();
-
-  useEffect(() => {
-    prevUsernameLength.current = username.length;
-  });
 
   useEffect(() => {
     prevError.current = error;
   }, [error]);
 
   useEffect(() => {
-    if (prevError.current && prevUsernameLength !== username.length) {
+    if (prevError.current) {
       clearErrorMsg();
     }
   }, [clearErrorMsg, username]);
