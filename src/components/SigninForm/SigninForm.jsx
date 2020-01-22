@@ -15,8 +15,11 @@ const SigninForm = ({
 
   useEffect(() => {
     prevUsernameLength.current = username.length;
-    prevError.current = error;
   });
+
+  useEffect(() => {
+    prevError.current = error;
+  }, [error]);
 
   useEffect(() => {
     if (prevError.current && prevUsernameLength !== username.length) {
